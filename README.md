@@ -26,6 +26,8 @@ Alternatively, you can also use it as a custom parameter:
 	Property: Filter
 	Value: BroadNibber;30;10;40
 
+At the end of the parameter value, you can hang `exclude:` or `include:`, followed by a comma-separated list of glyph names. This will apply the filter only to the included glyphs, or the glyphs not excluded, respectively.
+
 ### License
 
 Copyright 2014 Rainer Erich Scheichelbauer (@mekkablue).

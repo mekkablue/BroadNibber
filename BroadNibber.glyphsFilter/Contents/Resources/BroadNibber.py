@@ -315,22 +315,33 @@ class BroadNibber ( GSFilterPlugin ):
 		Item 0 in Arguments is the class-name. The consecutive items should be your filter options.
 		"""
 		try:
+			# set glyphList to all glyphs
+			glyphList = Font.glyphs
+			
 			# Set default values for potential arguments (values), just in case:
 			widthValue = 30.0
 			heightValue = 6.0
 			angleValue = 20.0
 			
+			# change glyphList to include or exclude glyphs
+			if "exclude:" in Arguments[-1]:
+				excludeList = [ n.strip() for n in Arguments.pop(-1).replace("exclude:","").strip().split(",") ]
+				glyphList = [ g for g in glyphList if not g.name in excludeList ]
+			elif "include:" in Arguments[-1]:
+				includeList = [ n.strip() for n in Arguments.pop(-1).replace("include:","").strip().split(",") ]
+				glyphList = [ Font.glyphs[n] for n in includeList ]
+			
 			# Override defaults with actual values from custom parameter:
-			if len( Arguments ) > 1:
+			if len( Arguments ) > 1 and not "clude:" in Arguments[1]:
 				widthValue = Arguments[1].floatValue()
-			if len( Arguments ) > 2:
+			if len( Arguments ) > 2 and not "clude:" in Arguments[2]:
 				heightValue = Arguments[2].floatValue()
-			if len( Arguments ) > 3:
+			if len( Arguments ) > 3 and not "clude:" in Arguments[3]:
 				angleValue = Arguments[3].floatValue()
 				
 			# With these values, call your code on every glyph:
 			FontMasterId = Font.fontMasterAtIndex_(0).id
-			for Glyph in Font.glyphs:
+			for Glyph in glyphList:
 				Layer = Glyph.layerForKey_( FontMasterId )
 				self.processLayerWithValues( Layer, widthValue, heightValue, angleValue ) # add your class variables here
 		except Exception as e:
