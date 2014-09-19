@@ -12,6 +12,7 @@ if not path in sys.path:
 	sys.path.append( path )
 
 import GlyphsApp
+GLYPHSAPPVERSION = NSBundle.bundleForClass_(GSMenu).infoDictionary().objectForKey_("CFBundleShortVersionString")
 
 """
 	Using Interface Builder (IB):
@@ -300,8 +301,12 @@ class BroadNibber ( GSFilterPlugin ):
 			self.rotateLayer( thisLayer, -penAngle )
 			
 			# expand:
-			NSClassFromString("GlyphsFilterOffsetCurve").offsetLayer_offsetX_offsetY_makeStroke_position_error_shadow_( thisLayer, offsetX*0.5, offsetY*0.5, True, 0.5, None, None )
-			
+			offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
+			if GLYPHSAPPVERSION.startswith("1."):
+				offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_position_error_shadow_( thisLayer, offsetX*0.5, offsetY*0.5, True, 0.5, None, None )
+			else:
+				offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_( thisLayer, offsetX*0.5, offsetY*0.5, True, False, 0.5, None,None)
+						
 			# rotate back and tidy up paths:
 			self.rotateLayer( thisLayer, penAngle )
 			thisLayer.cleanUpPaths()
