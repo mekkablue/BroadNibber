@@ -12,7 +12,6 @@ if not path in sys.path:
 	sys.path.append( path )
 
 import GlyphsApp
-GLYPHSAPPVERSION = NSBundle.bundleForClass_(GSMenu).infoDictionary().objectForKey_("CFBundleShortVersionString")
 
 """
 	Using Interface Builder (IB):
@@ -136,11 +135,29 @@ class BroadNibber ( GSFilterPlugin ):
 			self.angleValue = self.setDefaultFloatValue( "angle", 20.0, FontMaster )
 			self.angleField.setFloatValue_( self.angleValue )
 			
+			self.offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
+			
 			self.process_( None )
 			return None
 		except Exception as e:
 			self.logToConsole( "setup: %s" % str(e) )
 			# if something goes wrong, you can return an NSError object with details
+	
+	def curtomParameterString( self ):
+		"""Return the custom parameter string. Compatibility method because it is misspelled in the Protocol in early betas of Glyphs 2. Will be removed."""
+		try:
+			return self.customParameterString()
+		except Exception as e:
+			self.logToConsole( "curtomParameterString: %s" % str(e) )
+	
+	def customParameterString( self ):
+		"""Returns the Custom Parameter as string ready for the pasteboard."""
+		try:
+			clipboardString = '(\n    {\n        Filter = "BroadNibber;%.1f;%.1f;%.1f";\n    }\n)\n' % ( self.widthValue, self.heightValue, self.angleValue )
+			return clipboardString
+		except Exception as e:
+			self.logToConsole( "customParameterString: %s" % str(e) )
+			return False
 	
 	def setDefaultFloatValue( self, userDataKey, defaultValue, FontMaster ):
 		"""
@@ -301,12 +318,8 @@ class BroadNibber ( GSFilterPlugin ):
 			self.rotateLayer( thisLayer, -penAngle )
 			
 			# expand:
-			offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
-			if GLYPHSAPPVERSION.startswith("1."):
-				offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_position_error_shadow_( thisLayer, offsetX*0.5, offsetY*0.5, True, 0.5, None, None )
-			else:
-				offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_( thisLayer, offsetX*0.5, offsetY*0.5, True, False, 0.5, None,None)
-						
+			self.offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_position_error_shadow_( thisLayer, offsetX*0.5, offsetY*0.5, True, 0.5, None, None )
+									
 			# rotate back and tidy up paths:
 			self.rotateLayer( thisLayer, penAngle )
 			thisLayer.cleanUpPaths()
@@ -365,7 +378,7 @@ class BroadNibber ( GSFilterPlugin ):
 				ShadowLayer = ShadowLayers[k]
 				Layer = Layers[k]
 				Layer.setPaths_( NSMutableArray.alloc().initWithArray_copyItems_( ShadowLayer.pyobjc_instanceMethods.paths(), True ) )
-				Layer.setSelection_( NSMutableArray.array() )
+				Layer.clearSelection()
 				if len(ShadowLayer.selection()) > 0 and checkSelection:
 					for i in range(len( ShadowLayer.paths )):
 						currShadowPath = ShadowLayer.paths[i]
