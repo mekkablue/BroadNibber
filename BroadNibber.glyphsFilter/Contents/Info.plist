@@ -16,12 +16,20 @@
 	<string>BroadNibber</string>
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1.1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.1.0</string>
+	<string>100</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.1.1</string>
+	<key>UpdateFeedURL</key>
+	<string>https://raw.githubusercontent.com/mekkablue/BroadNibber/master/BroadNibber.glyphsFilter/Contents/Info.plist</string>
+	<key>productPageURL</key>
+	<string>https://github.com/mekkablue/BroadNibber</string>
+	<key>productDownloadURL</key>
+	<string>https://github.com/mekkablue/BroadNibber/archive/master.zip</string>
+	<key>productReleaseNotes</key>
+	<string>Implemented Glyphs Update mechanism.</string>
 	<key>LSHasLocalizedDisplayName</key>
 	<false/>
 	<key>NSAppleScriptEnabled</key>
