@@ -22,6 +22,10 @@
 	<string>100</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.1.1</string>
+	<key>productVersion</key>
+	<string>100</string>
+	<key>productVersionNice</key>
+	<string>1.1.1</string>
 	<key>UpdateFeedURL</key>
 	<string>https://raw.githubusercontent.com/mekkablue/BroadNibber/master/BroadNibber.glyphsFilter/Contents/Info.plist</string>
 	<key>productPageURL</key>
