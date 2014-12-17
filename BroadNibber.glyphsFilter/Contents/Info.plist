@@ -30,8 +30,6 @@
 	<string>https://raw.githubusercontent.com/mekkablue/BroadNibber/master/BroadNibber.glyphsFilter/Contents/Info.plist</string>
 	<key>productPageURL</key>
 	<string>https://github.com/mekkablue/BroadNibber</string>
-	<key>productDownloadURL</key>
-	<string>https://github.com/mekkablue/BroadNibber/archive/master.zip</string>
 	<key>productReleaseNotes</key>
 	<string>Implemented Glyphs Update mechanism.</string>
 	<key>LSHasLocalizedDisplayName</key>
