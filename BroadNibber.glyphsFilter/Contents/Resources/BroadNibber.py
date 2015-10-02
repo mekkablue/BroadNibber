@@ -143,17 +143,10 @@ class BroadNibber ( GSFilterPlugin ):
 			self.logToConsole( "setup: %s" % str(e) )
 			# if something goes wrong, you can return an NSError object with details
 	
-	def curtomParameterString( self ):
-		"""Return the custom parameter string. Compatibility method because it is misspelled in the Protocol in early betas of Glyphs 2. Will be removed."""
-		try:
-			return self.customParameterString()
-		except Exception as e:
-			self.logToConsole( "curtomParameterString: %s" % str(e) )
-	
 	def customParameterString( self ):
 		"""Returns the Custom Parameter as string ready for the pasteboard."""
 		try:
-			clipboardString = '(\n    {\n        Filter = "BroadNibber;%.1f;%.1f;%.1f";\n    }\n)\n' % ( self.widthValue, self.heightValue, self.angleValue )
+			clipboardString = 'BroadNibber;%.1f;%.1f;%.1f' % ( self.widthValue, self.heightValue, self.angleValue )
 			return clipboardString
 		except Exception as e:
 			self.logToConsole( "customParameterString: %s" % str(e) )
@@ -379,13 +372,13 @@ class BroadNibber ( GSFilterPlugin ):
 				Layer = Layers[k]
 				Layer.setPaths_( NSMutableArray.alloc().initWithArray_copyItems_( ShadowLayer.pyobjc_instanceMethods.paths(), True ) )
 				Layer.clearSelection()
-				if len(ShadowLayer.selection()) > 0 and checkSelection:
+				if len(ShadowLayer.selection) > 0 and checkSelection:
 					for i in range(len( ShadowLayer.paths )):
 						currShadowPath = ShadowLayer.paths[i]
 						currLayerPath = Layer.paths[i]
 						for j in range(len(currShadowPath.nodes)):
 							currShadowNode = currShadowPath.nodes[j]
-							if ShadowLayer.selection().containsObject_( currShadowNode ):
+							if ShadowLayer.selection.containsObject_( currShadowNode ):
 								Layer.addSelection_( currLayerPath.nodes[j] )
 								
 				self.processLayerWithValues( Layer, self.widthValue, self.heightValue, self.angleValue ) # add your class variables here

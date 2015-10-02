@@ -21,23 +21,23 @@
 	<key>CFBundleVersion</key>
 	<string>100</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1.1</string>
+	<string>1.1.2</string>
 	<key>productVersion</key>
-	<string>100</string>
+	<string>101</string>
 	<key>productVersionNice</key>
-	<string>1.1.1</string>
+	<string>1.1.2</string>
 	<key>UpdateFeedURL</key>
 	<string>https://raw.githubusercontent.com/mekkablue/BroadNibber/master/BroadNibber.glyphsFilter/Contents/Info.plist</string>
 	<key>productPageURL</key>
 	<string>https://github.com/mekkablue/BroadNibber</string>
 	<key>productReleaseNotes</key>
-	<string>Implemented Glyphs Update mechanism.</string>
+	<string>Update for Glyphs 2.2.</string>
 	<key>LSHasLocalizedDisplayName</key>
 	<false/>
 	<key>NSAppleScriptEnabled</key>
 	<false/>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright, Rainer Erich Scheichelbauer (mekkablue), 2014</string>
+	<string>Copyright, Rainer Erich Scheichelbauer, 2014</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
