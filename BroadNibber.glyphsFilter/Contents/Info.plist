@@ -19,19 +19,19 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>100</string>
+	<string>102</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1.2</string>
+	<string>1.1.3</string>
 	<key>productVersion</key>
-	<string>101</string>
+	<string>102</string>
 	<key>productVersionNice</key>
-	<string>1.1.2</string>
+	<string>1.1.3</string>
 	<key>UpdateFeedURL</key>
 	<string>https://raw.githubusercontent.com/mekkablue/BroadNibber/master/BroadNibber.glyphsFilter/Contents/Info.plist</string>
 	<key>productPageURL</key>
 	<string>https://github.com/mekkablue/BroadNibber</string>
 	<key>productReleaseNotes</key>
-	<string>Update for Glyphs 2.2.</string>
+	<string>[2.2+ only!] Fixed error "object has no attribute containsObject_".</string>
 	<key>LSHasLocalizedDisplayName</key>
 	<false/>
 	<key>NSAppleScriptEnabled</key>

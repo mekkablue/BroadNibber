@@ -378,7 +378,7 @@ class BroadNibber ( GSFilterPlugin ):
 						currLayerPath = Layer.paths[i]
 						for j in range(len(currShadowPath.nodes)):
 							currShadowNode = currShadowPath.nodes[j]
-							if ShadowLayer.selection.containsObject_( currShadowNode ):
+							if currShadowNode in ShadowLayer.selection:
 								Layer.addSelection_( currLayerPath.nodes[j] )
 								
 				self.processLayerWithValues( Layer, self.widthValue, self.heightValue, self.angleValue ) # add your class variables here
