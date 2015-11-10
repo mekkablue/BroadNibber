@@ -67,6 +67,7 @@ class BroadNibber ( GSFilterPlugin ):
 		"""
 		try:
 			NSBundle.loadNibNamed_owner_( "BroadNibberDialog", self )
+			self.offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
 			return self
 		except Exception as e:
 			self.logToConsole( "init: %s" % str(e) )
@@ -134,8 +135,6 @@ class BroadNibber ( GSFilterPlugin ):
 
 			self.angleValue = self.setDefaultFloatValue( "angle", 20.0, FontMaster )
 			self.angleField.setFloatValue_( self.angleValue )
-			
-			self.offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
 			
 			self.process_( None )
 			return None

@@ -21,17 +21,17 @@
 	<key>CFBundleVersion</key>
 	<string>102</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1.3</string>
+	<string>1.1.4</string>
 	<key>productVersion</key>
-	<string>102</string>
+	<string>103</string>
 	<key>productVersionNice</key>
-	<string>1.1.3</string>
+	<string>1.1.4</string>
 	<key>UpdateFeedURL</key>
 	<string>https://raw.githubusercontent.com/mekkablue/BroadNibber/master/BroadNibber.glyphsFilter/Contents/Info.plist</string>
 	<key>productPageURL</key>
 	<string>https://github.com/mekkablue/BroadNibber</string>
 	<key>productReleaseNotes</key>
-	<string>[2.2+ only!] Fixed error "object has no attribute containsObject_".</string>
+	<string>Fixed custom parameter not working.</string>
 	<key>LSHasLocalizedDisplayName</key>
 	<false/>
 	<key>NSAppleScriptEnabled</key>
