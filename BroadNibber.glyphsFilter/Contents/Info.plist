@@ -19,19 +19,19 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>102</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1.1.4</string>
+	<string>104</string>
 	<key>productVersion</key>
-	<string>103</string>
+	<string>104</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.1.5</string>
 	<key>productVersionNice</key>
-	<string>1.1.4</string>
+	<string>1.1.5</string>
 	<key>UpdateFeedURL</key>
 	<string>https://raw.githubusercontent.com/mekkablue/BroadNibber/master/BroadNibber.glyphsFilter/Contents/Info.plist</string>
 	<key>productPageURL</key>
 	<string>https://github.com/mekkablue/BroadNibber</string>
 	<key>productReleaseNotes</key>
-	<string>Fixed custom parameter not working.</string>
+	<string>Fixed Erroneous Update Notice (thx MajusCorp).</string>
 	<key>LSHasLocalizedDisplayName</key>
 	<false/>
 	<key>NSAppleScriptEnabled</key>
