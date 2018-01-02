@@ -2,16 +2,11 @@
 # encoding: utf-8
 
 import objc
-from Foundation import *
-from AppKit import *
+import GlyphsApp
+from GlyphsApp.plugins import *
 import sys, os, re, math
 
-MainBundle = NSBundle.mainBundle()
-path = MainBundle.bundlePath() + "/Contents/Scripts"
-if not path in sys.path:
-	sys.path.append( path )
 
-import GlyphsApp
 
 """
 	Using Interface Builder (IB):
