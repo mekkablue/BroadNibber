@@ -8,7 +8,6 @@
             <connections>
                 <outlet property="_view" destination="1" id="sc4-cV-ZFh"/>
                 <outlet property="angleField" destination="V21-zj-A0q" id="uWQ-IJ-ofN"/>
-                <outlet property="firstValueField" destination="vfg-c5-0Yw" id="gAu-eA-adq"/>
                 <outlet property="heightField" destination="TnO-Zq-yet" id="Bpx-zm-nb0"/>
                 <outlet property="widthField" destination="vfg-c5-0Yw" id="m7Z-SU-bAF"/>
             </connections>
