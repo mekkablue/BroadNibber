@@ -32,8 +32,16 @@ class BroadNibber(FilterWithDialog):
 		self.menuName = Glyphs.localize({
 			'en': u'BroadNibber',
 			'fr': u'Traceur',
-			'de': u'Breitfeder',
+			'de': u'Mit Breitfeder nachziehen',
+			'es': u'Trazar con pluma chata',
 		})
+		self.actionButtonLabel = Glyphs.localize({
+			'en': u'Trace',
+			'fr': u'Appliquer',
+			'de': u'Nachziehen',
+			'es': u'Aplicar',
+		})
+		
 		# Load dialog from .nib (without .extension)
 		self.loadNib('IBdialog', __file__)
 	
