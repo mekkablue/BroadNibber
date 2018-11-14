@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="BroadNibber">
+            <connections>
+                <outlet property="angleField" destination="IAc-Qk-YdS" id="qO6-eO-XQ8"/>
+                <outlet property="dialog" destination="1" id="h4D-OA-M2N"/>
+                <outlet property="heightField" destination="SQ8-O5-wCO" id="9Po-Ft-Rcx"/>
+                <outlet property="widthField" destination="b42-EO-OTK" id="bqR-Qi-oIg"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="1">
+            <rect key="frame" x="0.0" y="0.0" width="261" height="126"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField toolTip="Width of the pen in units" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="b42-EO-OTK" customClass="GSSteppingTextField">
+                    <rect key="frame" x="69" y="84" width="172" height="22"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="pen size" drawsBackground="YES" id="vvb-fs-Kc2">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="setWidth:" target="-2" id="bEH-6s-Thn"/>
+                    </connections>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eek-Df-5KX">
+                    <rect key="frame" x="18" y="55" width="45" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Height" id="7VQ-kE-FFK">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField toolTip="Thickness of the pen in units" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SQ8-O5-wCO" customClass="GSSteppingTextField">
+                    <rect key="frame" x="69" y="52" width="172" height="22"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="pen thickness" drawsBackground="YES" id="9dG-G7-MdR">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="setHeight:" target="-2" id="ceB-03-91e"/>
+                    </connections>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uyi-pk-Hj3">
+                    <rect key="frame" x="18" y="23" width="45" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Angle" id="L5r-2Q-8iS">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField toolTip="Broadnib angle in degrees" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IAc-Qk-YdS" customClass="GSSteppingTextField">
+                    <rect key="frame" x="69" y="20" width="172" height="22"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="pen angle" drawsBackground="YES" id="dbR-Bu-FOG">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="setAngle:" target="-2" id="SUZ-jF-N0Y"/>
+                    </connections>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4lb-11-hnX">
+                    <rect key="frame" x="18" y="87" width="45" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Width" id="cs5-5a-ZDs">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="eek-Df-5KX" firstAttribute="trailing" secondItem="4lb-11-hnX" secondAttribute="trailing" id="7al-jo-oUL"/>
+                <constraint firstItem="uyi-pk-Hj3" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" symbolic="YES" id="99V-R9-UiC"/>
+                <constraint firstItem="SQ8-O5-wCO" firstAttribute="leading" secondItem="eek-Df-5KX" secondAttribute="trailing" constant="8" symbolic="YES" id="Du7-hd-WWD"/>
+                <constraint firstItem="IAc-Qk-YdS" firstAttribute="leading" secondItem="uyi-pk-Hj3" secondAttribute="trailing" constant="8" symbolic="YES" id="E7i-If-jNN"/>
+                <constraint firstItem="uyi-pk-Hj3" firstAttribute="trailing" secondItem="4lb-11-hnX" secondAttribute="trailing" id="Gz2-JS-goK"/>
+                <constraint firstItem="b42-EO-OTK" firstAttribute="leading" secondItem="4lb-11-hnX" secondAttribute="trailing" constant="8" symbolic="YES" id="JfB-pp-ATZ"/>
+                <constraint firstItem="IAc-Qk-YdS" firstAttribute="top" secondItem="SQ8-O5-wCO" secondAttribute="bottom" constant="10" symbolic="YES" id="LNq-ip-hX5"/>
+                <constraint firstItem="4lb-11-hnX" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" symbolic="YES" id="NA9-4g-71n"/>
+                <constraint firstAttribute="bottom" secondItem="IAc-Qk-YdS" secondAttribute="bottom" constant="20" symbolic="YES" id="QsM-1M-o0q"/>
+                <constraint firstItem="SQ8-O5-wCO" firstAttribute="firstBaseline" secondItem="eek-Df-5KX" secondAttribute="firstBaseline" id="Suj-Cm-w4N"/>
+                <constraint firstItem="b42-EO-OTK" firstAttribute="top" secondItem="1" secondAttribute="top" constant="20" symbolic="YES" id="WTL-70-YrW"/>
+                <constraint firstItem="SQ8-O5-wCO" firstAttribute="top" secondItem="b42-EO-OTK" secondAttribute="bottom" constant="10" symbolic="YES" id="Y8P-Mo-rwx"/>
+                <constraint firstItem="IAc-Qk-YdS" firstAttribute="firstBaseline" secondItem="uyi-pk-Hj3" secondAttribute="firstBaseline" id="Z5q-uv-o5Z"/>
+                <constraint firstAttribute="trailing" secondItem="SQ8-O5-wCO" secondAttribute="trailing" constant="20" symbolic="YES" id="b53-d7-fLf"/>
+                <constraint firstAttribute="trailing" secondItem="b42-EO-OTK" secondAttribute="trailing" constant="20" symbolic="YES" id="fJL-fL-YuV"/>
+                <constraint firstItem="b42-EO-OTK" firstAttribute="firstBaseline" secondItem="4lb-11-hnX" secondAttribute="firstBaseline" id="n1J-wl-fqZ"/>
+                <constraint firstItem="eek-Df-5KX" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" symbolic="YES" id="oeO-NW-uab"/>
+                <constraint firstAttribute="trailing" secondItem="IAc-Qk-YdS" secondAttribute="trailing" constant="20" symbolic="YES" id="qK2-Ez-KFH"/>
+                <constraint firstItem="SQ8-O5-wCO" firstAttribute="top" secondItem="b42-EO-OTK" secondAttribute="bottom" constant="10" symbolic="YES" id="vam-Nt-UvX"/>
+                <constraint firstItem="IAc-Qk-YdS" firstAttribute="top" secondItem="SQ8-O5-wCO" secondAttribute="bottom" constant="10" symbolic="YES" id="wfe-6i-06b"/>
+            </constraints>
+            <point key="canvasLocation" x="164.5" y="200"/>
+        </customView>
+    </objects>
+</document>

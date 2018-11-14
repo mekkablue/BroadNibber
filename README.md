@@ -1,7 +1,7 @@
 # BroadNibber.glyphsFilter
 
 This is a plugin for the [Glyphs font editor](http://glyphsapp.com/) by Georg Seifert.
-It turns monolines of all selected glyphs into broad-nib strokes. After installation, it will add the menu item *Filter > BroadNibber*. You can set a keyboard shortcut in System Preferences.
+It turns monolines of all selected glyphs into broad-nib strokes. After installation, it will add the menu item *Filter > BroadNibber* (de: *Breitfeder,* fr: *Traceur*). You can set a keyboard shortcut in System Preferences.
 
 ![Broad-nibbing a monoline.](BroadNibber.png "BroadNibber")
 
