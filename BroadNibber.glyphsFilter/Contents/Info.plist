@@ -17,15 +17,15 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleVersion</key>
-	<string>109</string>
+	<string>110</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.2.3</string>
+	<string>1.2.4</string>
 	<key>UpdateFeedURL</key>
 	<string>https://raw.githubusercontent.com/mekkablue/BroadNibber/master/BroadNibber.glyphsFilter/Contents/Info.plist</string>
 	<key>productPageURL</key>
 	<string>https://github.com/mekkablue/BroadNibber</string>
 	<key>productReleaseNotes</key>
-	<string>Added Chinese localisation (thx 张大可 and 杨翕丞).</string>
+	<string>Added Chinese localisation, thx 刘钊， 宋熙然， 杨翕丞， 张大可.</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright, Rainer Erich Scheichelbauer, 2014-2018</string>
 	<key>NSPrincipalClass</key>

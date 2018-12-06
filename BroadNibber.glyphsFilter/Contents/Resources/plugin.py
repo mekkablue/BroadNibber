@@ -34,14 +34,14 @@ class BroadNibber(FilterWithDialog):
 			'fr': u'Traceur',
 			'de': u'Mit Breitfeder nachziehen',
 			'es': u'Trazar con pluma chata',
-			'zh': u'扁头笔风格化',			
+			'zh': u'✒️扁头笔风格化',			
 		})
 		self.actionButtonLabel = Glyphs.localize({
 			'en': u'Trace',
 			'fr': u'Appliquer',
 			'de': u'Nachziehen',
 			'es': u'Aplicar',
-			'zh': u'应用',
+			'zh': u'确定',
 		})
 		
 		# Load dialog from .nib (without .extension)
