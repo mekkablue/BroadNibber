@@ -1,4 +1,5 @@
 # encoding: utf-8
+from __future__ import division, print_function, unicode_literals
 
 ###########################################################################################################
 #
@@ -17,6 +18,7 @@
 import objc, math
 from GlyphsApp import *
 from GlyphsApp.plugins import *
+from Foundation import NSClassFromString
 
 class BroadNibber(FilterWithDialog):
 	# GUI elements:
@@ -25,9 +27,7 @@ class BroadNibber(FilterWithDialog):
 	heightField = objc.IBOutlet()
 	angleField = objc.IBOutlet()
 	
-	# offset curve filter: 
-	offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
-	
+	@objc.python_method
 	def settings(self):
 		self.menuName = Glyphs.localize({
 			'en': u'BroadNibber',
@@ -48,6 +48,7 @@ class BroadNibber(FilterWithDialog):
 		self.loadNib('IBdialog', __file__)
 	
 	# On dialog show
+	@objc.python_method
 	def start(self):
 		# Default settings:
 		NSUserDefaults.standardUserDefaults().registerDefaults_({
@@ -87,14 +88,15 @@ class BroadNibber(FilterWithDialog):
 		self.update()
 	
 	# Actual filter
+	@objc.python_method
 	def filter(self, thisLayer, inEditView, customParameters):
 		
 		# Called on font export, get value from customParameters
-		if customParameters.has_key('width'):
+		if 'width' in customParameters:
 			width = customParameters['width']
-		if customParameters.has_key('height'):
+		if 'height' in customParameters:
 			height = customParameters['height']
-		if customParameters.has_key('angle'):
+		if 'angle' in customParameters:
 			angle = customParameters['angle']
 		
 		# Called through UI, use stored value
@@ -108,16 +110,7 @@ class BroadNibber(FilterWithDialog):
 		thisLayer.addInflectionPoints()
 		# rotate and expand:
 		self.rotateLayer( thisLayer, -angle )
-		self.offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_( 
-			thisLayer, # Layer
-			width*0.5, # offsetX
-			height*0.5, # offsetY
-			True, # makeStroke
-			False, # autoStroke
-			0.5, # position
-			None, # error
-			None # shadow
-			)
+		self.offsetLayer( thisLayer, width*0.5, height*0.5, makeStroke=True, position=0.5, autoStroke=False )
 		# rotate back and tidy up paths:
 		self.rotateLayer( thisLayer, angle )
 		thisLayer.cleanUpPaths()
@@ -130,13 +123,37 @@ class BroadNibber(FilterWithDialog):
 			Glyphs.defaults['com.mekkablue.BroadNibber.angle'],
 			)
 	
-	def __file__(self):
-		"""Please leave this method unchanged"""
-		return __file__
-
+	@objc.python_method
 	def rotateLayer( self, thisLayer, angle ):
 		"""Rotates all paths in the thisLayer."""
 		rotation = NSAffineTransform.transform()
 		rotation.rotateByDegrees_(angle)
 		thisLayer.transform_checkForSelection_doComponents_(rotation,False,False)
+	
+	@objc.python_method
+	def offsetLayer( self, thisLayer, offsetX, offsetY, makeStroke=False, position=0.5, autoStroke=False ):
+		offsetFilter = NSClassFromString("GlyphsFilterOffsetCurve")
+		try:
+			# GLYPHS 3:	
+			offsetFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_metrics_error_shadow_capStyleStart_capStyleEnd_keepCompatibleOutlines_(
+				thisLayer,
+				offsetX, offsetY, # horizontal and vertical offset
+				makeStroke,     # if True, creates a stroke
+				autoStroke,     # if True, distorts resulting shape to vertical metrics
+				position,       # stroke distribution to the left and right, 0.5 = middle
+				None, None, None, 0, 0, False )
+		except:
+			# GLYPHS 2:
+			offsetFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_(
+				thisLayer,
+				offsetX, offsetY, # horizontal and vertical offset
+				makeStroke,     # if True, creates a stroke
+				autoStroke,     # if True, distorts resulting shape to vertical metrics
+				position,       # stroke distribution to the left and right, 0.5 = middle
+				None, None )
+	
+	@objc.python_method
+	def __file__(self):
+		"""Please leave this method unchanged"""
+		return __file__
 	
