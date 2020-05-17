@@ -26,9 +26,5 @@
 	<string>Copyright, Rainer Erich Scheichelbauer, 2014-2018</string>
 	<key>NSPrincipalClass</key>
 	<string>BroadNibber</string>
-	<key>PyMainFileNames</key>
-	<array>
-		<string>plugin.py</string>
-	</array>
 </dict>
 </plist>

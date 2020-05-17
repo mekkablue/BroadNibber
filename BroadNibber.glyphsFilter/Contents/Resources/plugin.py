@@ -115,6 +115,7 @@ class BroadNibber(FilterWithDialog):
 		self.rotateLayer( thisLayer, angle )
 		thisLayer.cleanUpPaths()
 	
+	@objc.python_method
 	def generateCustomParameter( self ):
 		return "%s; width:%s; height:%s; angle:%s;" % (
 			self.__class__.__name__, 
@@ -156,4 +157,3 @@ class BroadNibber(FilterWithDialog):
 	def __file__(self):
 		"""Please leave this method unchanged"""
 		return __file__
-	
