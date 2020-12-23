@@ -12,19 +12,19 @@
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>BroadNibber</string>
-	<key>CFBundleVersion</key>
-	<string>113</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.0.1</string>
+	<string>2.0.2</string>
+	<key>CFBundleVersion</key>
+	<string>114</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright, Rainer Erich Scheichelbauer, 2014-2018</string>
+	<key>NSPrincipalClass</key>
+	<string>BroadNibber</string>
 	<key>UpdateFeedURL</key>
 	<string>https://raw.githubusercontent.com/mekkablue/BroadNibber/master/BroadNibber.glyphsFilter/Contents/Info.plist</string>
 	<key>productPageURL</key>
 	<string>https://github.com/mekkablue/BroadNibber</string>
 	<key>productReleaseNotes</key>
-	<string>Updated plugin binary.</string>
-	<key>NSHumanReadableCopyright</key>
-	<string>Copyright, Rainer Erich Scheichelbauer, 2014-2018</string>
-	<key>NSPrincipalClass</key>
-	<string>BroadNibber</string>
+	<string>update binary files for Glyphs3</string>
 </dict>
 </plist>
