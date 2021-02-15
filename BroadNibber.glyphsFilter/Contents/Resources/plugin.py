@@ -134,7 +134,7 @@ class BroadNibber(FilterWithDialog):
 	@objc.python_method
 	def offsetLayer( self, thisLayer, offsetX, offsetY, makeStroke=False, position=0.5, autoStroke=False ):
 		offsetFilter = NSClassFromString("GlyphsFilterOffsetCurve")
-		try:
+		if Glyphs.versionNumber >= 3:
 			# GLYPHS 3:	
 			offsetFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_metrics_error_shadow_capStyleStart_capStyleEnd_keepCompatibleOutlines_(
 				thisLayer,
@@ -143,7 +143,7 @@ class BroadNibber(FilterWithDialog):
 				autoStroke,     # if True, distorts resulting shape to vertical metrics
 				position,       # stroke distribution to the left and right, 0.5 = middle
 				None, None, None, 0, 0, False )
-		except:
+		else:
 			# GLYPHS 2:
 			offsetFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_(
 				thisLayer,
